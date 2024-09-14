@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Article preview component</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        font-family: "Manrope";
+        padding: 0;
+        transition: all 0.35s;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #edf2f8;
+        height: 100vh;
+      }
+      .container {
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        margin: 20px;
+        justify-content: center;
+        width: 950px;
+        align-items: center;
+      }
+      h2,
+      p {
+        margin: 7px 0;
+      }
+      .space {
+        margin: 1px 0;
+      }
+      .column-1 {
+        width: 40%;
+      }
+      .drawers-img {
+        height: 100%;
+        width: 100%;
+        border-radius: 20px 0 0 20px;
+      }
+      .column-2 {
+        width: 60%;
+        padding: 10px 20px;
+      }
+      .profile-container {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        justify-content: space-between;
+      }
+      .avatar-img {
+        width: 50px;
+        border-radius: 50%;
+        margin-top: 10px;
+      }
+      .profile {
+        display: flex;
+      }
+      .profile-column-2,
+      .profile-column-2 {
+        margin: 10px 20px;
+        position: relative;
+      }
+      .share-img {
+        background-color: #ebf1fa;
+        width: 40px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .share-btn {
+        cursor: pointer;
+        position: absolute;
+      }
+      .hide-container {
+        background-color: #49556c;
+        width: 300px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        top: -80px;
+        padding: 15px 25px;
+        justify-content: center;
+        border-radius: 10px;
+        left: 150px;
+        display: none;
+      }
+      h2,
+      h3 {
+        color: hsl(217, 19%, 35%);
+      }
+      p {
+        color: hsl(214, 17%, 51%);
+        font-weight: 600;
+      }
+      .show {
+        display: block;
+      }
+      .show-btn {
+        left: 280px;
+        display: block;
+      }
+      .hide-container img {
+        margin: 0 10px;
+      }
+      .share-cotainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+      }
+      .share-cotainer-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .hide-container p {
+        font-weight: 300;
+        text-transform: uppercase;
+        color: hsl(212, 23%, 69%);
+        margin-right: 7px;
+        letter-spacing: 4px;
+      }
+      .hide-container::after {
+        content: "";
+        position: absolute;
+        background-color: #49556c;
+        width: 30px;
+        rotate: 46deg;
+        height: 30px;
+        top: 50px;
+      }
+      @media (max-width: 950px) {
+        .container {
+          width: 375px;
+          height: 590px;
+          flex-direction: column;
+        }
+        .column-1 {
+          width: 100%;
+        }
+        h2,
+        h3 {
+          font-size: 19px;
+        }
+        .column-2 {
+          width: 100%;
+        }
+        .drawers-img {
+          border-radius: 20px 20px 0 0;
+        }
+        .hide-container {
+          width: 375px;
+          border-radius: 0 0 20px 20px;
+          left: -207px;
+          padding: 25px;
+          top: 10px;
+        }
+        .hide-container::after {
+          display: none;
+        }
+        .profile-column-1,
+        .profile-column-2 {
+          position: relative;
+        }
+        .share-btn {
+          position: fixed;
+          left: 530px;
+          bottom: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="column-1">
+        <img class="drawers-img" src="./images/drawers.jpg" alt="" />
+      </div>
+      <div class="column-2">
+        <h2>
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h2>
+        <p>
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+        <div class="profile-container">
+          <div class="profile">
+            <div class="profile-column-1">
+              <img
+                class="avatar-img"
+                src="./images/avatar-michelle.jpg"
+                alt=""
+              />
+            </div>
+            <div class="profile-column-2">
+              <h3>Michelle</h3>
+              <p class="space">28 Jun 2020</p>
+            </div>
+          </div>
+          <div class="share-cotainer">
+            <div class="hide-container" id="hideContainer">
+              <p>Share</p>
+              <img src="./images/icon-facebook.svg" alt="" />
+              <img src="./images/icon-twitter.svg" alt="" />
+              <img src="./images/icon-pinterest.svg" alt="" />
+            </div>
+            <div class="share-btn" id="hidebtn">
+              <img class="share-img" src="./images/icon-share.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector("#hidebtn");
+      const container = document.querySelector("#hideContainer");
+
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("show-btn");
+        container.classList.toggle("show");
+        container.classList.toggle("share-cotainer-btn");
+      });
+    </script>
+  </body>
+</html>
